@@ -1,25 +1,9 @@
-"use client"
+"use client";
 
-import { ArrowUp, ArrowDown, Download, Filter } from "lucide-react"
+import { ArrowUp, ArrowDown, Download, Filter } from "lucide-react";
 
 export default function FundingContent() {
   const transactions = [
-    {
-      id: "TRX-78945",
-      project: "SPELL BOUND vintage witchcraft",
-      backer: "John Smith",
-      amount: "$120.00",
-      date: "2023-04-05 14:32",
-      status: "Completed",
-    },
-    {
-      id: "TRX-78946",
-      project: "Tomb of the Sun King",
-      backer: "Sarah Johnson",
-      amount: "$85.00",
-      date: "2023-04-05 13:45",
-      status: "Completed",
-    },
     {
       id: "TRX-78947",
       project: "The Arrow and the Ivy",
@@ -44,20 +28,20 @@ export default function FundingContent() {
       date: "2023-04-05 10:45",
       status: "Failed",
     },
-  ]
+  ];
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Completed":
-        return "bg-green-100 text-green-800"
+        return "bg-green-100 text-green-800";
       case "Processing":
-        return "bg-yellow-100 text-yellow-800"
+        return "bg-yellow-100 text-yellow-800";
       case "Failed":
-        return "bg-red-100 text-red-800"
+        return "bg-red-100 text-red-800";
       default:
-        return "bg-gray-100 text-gray-800"
+        return "bg-gray-100 text-gray-800";
     }
-  }
+  };
 
   return (
     <>
@@ -78,14 +62,18 @@ export default function FundingContent() {
       <div className="bg-white p-4 rounded-lg shadow mb-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Date Range
+            </label>
             <input
               type="date"
               className="w-full border rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Category
+            </label>
             <select className="w-full border rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
               <option value="">All Categories</option>
               <option value="games">Games</option>
@@ -96,7 +84,9 @@ export default function FundingContent() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Status
+            </label>
             <select className="w-full border rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
               <option value="">All Statuses</option>
               <option value="completed">Completed</option>
@@ -109,7 +99,9 @@ export default function FundingContent() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
         <div className="bg-white p-6 rounded-lg shadow">
-          <div className="text-sm text-gray-500">Total Funding (This Month)</div>
+          <div className="text-sm text-gray-500">
+            Total Funding (This Month)
+          </div>
           <div className="text-2xl font-bold">$1,256,890</div>
           <div className="text-sm text-green-500 flex items-center">
             <ArrowUp className="h-3 w-3 mr-1" />
@@ -155,23 +147,43 @@ export default function FundingContent() {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Project
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Backer</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Backer
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Amount
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Date
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {transactions.map((transaction, index) => (
               <tr key={index}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{transaction.id}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{transaction.project}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{transaction.backer}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{transaction.amount}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{transaction.date}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {transaction.id}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {transaction.project}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {transaction.backer}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {transaction.amount}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {transaction.date}
+                </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span
-                    className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(transaction.status)}`}
+                    className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(
+                      transaction.status
+                    )}`}
                   >
                     {transaction.status}
                   </span>
@@ -182,5 +194,5 @@ export default function FundingContent() {
         </table>
       </div>
     </>
-  )
+  );
 }

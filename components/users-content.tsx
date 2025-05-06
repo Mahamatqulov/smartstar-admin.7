@@ -94,49 +94,6 @@ export default function UsersContent() {
       joined: "Nov 18, 2020",
       status: "Active",
     },
-    {
-      id: 4,
-      name: "Michael Chen",
-      email: "michael@example.com",
-      role: "Backer",
-      projects: 0,
-      backed: 42,
-      pledged: "$5,670",
-      joined: "Feb 3, 2022",
-      status: "Active",
-    },
-    {
-      id: 5,
-      name: "Emily Rodriguez",
-      email: "emily@example.com",
-      role: "Moderator",
-      projects: 1,
-      backed: 15,
-      pledged: "$1,890",
-      joined: "Jul 22, 2021",
-      status: "Active",
-    },
-    // Generate more sample users for testing pagination
-    ...Array.from({ length: 30 }, (_, i) => ({
-      id: i + 6,
-      name: `User ${i + 6}`,
-      email: `user${i + 6}@example.com`,
-      role:
-        i % 4 === 0
-          ? "Admin"
-          : i % 3 === 0
-          ? "Moderator"
-          : i % 2 === 0
-          ? "Creator"
-          : "Backer",
-      projects: i % 2 === 0 ? Math.floor(Math.random() * 5) : 0,
-      backed: Math.floor(Math.random() * 50),
-      pledged: `$${Math.floor(Math.random() * 10000)}`,
-      joined: `Jan ${Math.floor(Math.random() * 28) + 1}, ${
-        2020 + Math.floor(Math.random() * 4)
-      }`,
-      status: i % 10 === 0 ? "Suspended" : i % 7 === 0 ? "Pending" : "Active",
-    })),
   ];
 
   // Filter and paginate users
